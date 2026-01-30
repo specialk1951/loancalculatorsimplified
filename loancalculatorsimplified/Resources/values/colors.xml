@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Blue -->
+    <color name="blue_primary">#2563EB</color>
+    <color name="blue_light">#EFF6FF</color>
+    <color name="blue_border">#BFDBFE</color>
+    <color name="blue_result_bg">#E0E7FF</color>
+
+    <!-- Green (Calculate Button) -->
+    <color name="green_button">#16A34A</color>
+
+    <!-- Red (Clear Button / Error) -->
+    <color name="red_button">#DC2626</color>
+    <color name="red_error_bg">#FEF2F2</color>
+    <color name="red_error_border">#FECACA</color>
+    <color name="red_error_text">#B91C1C</color>
+
+    <!-- Text Colors -->
+    <color name="text_dark">#1F2937</color>
+    <color name="text_medium">#374151</color>
+    <color name="text_label">#374151</color>
+
+    <!-- Background -->
+    <color name="background">#EFF6FF</color>
+    <color name="white">#FFFFFF</color>
+</resources>
