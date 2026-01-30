@@ -12,24 +12,24 @@ A SwiftUI iOS app with PIN authentication for loan calculations.
 
 ```
 ios/
-├── LoanCalculator.xcodeproj/    # Xcode project file
-└── LoanCalculator/
-    ├── LoanCalculatorApp.swift  # App entry point
-    ├── Info.plist               # App configuration
-    ├── Assets.xcassets/         # Images and colors
+├── loancalculatorsimplified.xcodeproj/    # Xcode project file
+└── loancalculatorsimplified/
+    ├── loancalculatorsimplifiedApp.swift  # App entry point
+    ├── Info.plist                         # App configuration
+    ├── Assets.xcassets/                   # Images and colors
     ├── Models/
-    │   └── LoanCalculation.swift    # Loan math logic
+    │   └── LoanCalculation.swift          # Loan math logic
     ├── Views/
-    │   ├── LoginView.swift          # PIN entry/setup screen
-    │   └── CalculatorView.swift     # Main calculator
+    │   ├── LoginView.swift                # PIN entry/setup screen
+    │   └── CalculatorView.swift           # Main calculator
     └── Services/
-        └── AuthenticationService.swift  # PIN storage (Keychain)
+        └── AuthenticationService.swift    # PIN storage (Keychain)
 ```
 
 ## Building
 
 1. Copy the `ios` folder to a Mac
-2. Open `LoanCalculator.xcodeproj` in Xcode
+2. Open `loancalculatorsimplified.xcodeproj` in Xcode
 3. Select your development team in Signing & Capabilities
 4. Build and run (Cmd + R)
 
