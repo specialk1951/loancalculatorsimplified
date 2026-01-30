@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct LoanCalculatorApp: App {
+struct loancalculatorsimplifiedApp: App {
     @StateObject private var authService = AuthenticationService()
 
     var body: some Scene {

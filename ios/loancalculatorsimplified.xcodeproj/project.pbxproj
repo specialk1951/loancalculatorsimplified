@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		APP001 /* LoanCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001; };
+		APP001 /* loancalculatorsimplifiedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001; };
 		APP002 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002; };
 		APP003 /* LoanCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC003; };
 		APP004 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC004; };
@@ -16,8 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		PRD001 /* LoanCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoanCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		SRC001 /* LoanCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCalculatorApp.swift; sourceTree = "<group>"; };
+		PRD001 /* loancalculatorsimplified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loancalculatorsimplified.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		SRC001 /* loancalculatorsimplifiedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loancalculatorsimplifiedApp.swift; sourceTree = "<group>"; };
 		SRC002 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		SRC003 /* LoanCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCalculation.swift; sourceTree = "<group>"; };
 		SRC004 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -40,22 +40,22 @@
 		GRP001 = {
 			isa = PBXGroup;
 			children = (
-				GRP002 /* LoanCalculator */,
+				GRP002 /* loancalculatorsimplified */,
 				GRP006 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		GRP002 /* LoanCalculator */ = {
+		GRP002 /* loancalculatorsimplified */ = {
 			isa = PBXGroup;
 			children = (
-				SRC001 /* LoanCalculatorApp.swift */,
+				SRC001 /* loancalculatorsimplifiedApp.swift */,
 				GRP003 /* Models */,
 				GRP004 /* Views */,
 				GRP005 /* Services */,
 				RES001 /* Assets.xcassets */,
 				CFG001 /* Info.plist */,
 			);
-			path = LoanCalculator;
+			path = loancalculatorsimplified;
 			sourceTree = "<group>";
 		};
 		GRP003 /* Models */ = {
@@ -86,7 +86,7 @@
 		GRP006 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				PRD001 /* LoanCalculator.app */,
+				PRD001 /* loancalculatorsimplified.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,9 +94,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		TGT001 /* LoanCalculator */ = {
+		TGT001 /* loancalculatorsimplified */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFG002 /* Build configuration list for PBXNativeTarget "LoanCalculator" */;
+			buildConfigurationList = CFG002 /* Build configuration list for PBXNativeTarget "loancalculatorsimplified" */;
 			buildPhases = (
 				SRC006 /* Sources */,
 				FRM001 /* Frameworks */,
@@ -106,9 +106,9 @@
 			);
 			dependencies = (
 			);
-			name = LoanCalculator;
-			productName = LoanCalculator;
-			productReference = PRD001 /* LoanCalculator.app */;
+			name = loancalculatorsimplified;
+			productName = loancalculatorsimplified;
+			productReference = PRD001 /* loancalculatorsimplified.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CFG003 /* Build configuration list for PBXProject "LoanCalculator" */;
+			buildConfigurationList = CFG003 /* Build configuration list for PBXProject "loancalculatorsimplified" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				TGT001 /* LoanCalculator */,
+				TGT001 /* loancalculatorsimplified */,
 			);
 		};
 /* End PBXProject section */
@@ -160,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				APP001 /* LoanCalculatorApp.swift in Sources */,
+				APP001 /* loancalculatorsimplifiedApp.swift in Sources */,
 				APP002 /* AuthenticationService.swift in Sources */,
 				APP003 /* LoanCalculation.swift in Sources */,
 				APP004 /* LoginView.swift in Sources */,
@@ -300,7 +300,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoanCalculator/Info.plist;
+				INFOPLIST_FILE = loancalculatorsimplified/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,7 +329,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoanCalculator/Info.plist;
+				INFOPLIST_FILE = loancalculatorsimplified/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CFG002 /* Build configuration list for PBXNativeTarget "LoanCalculator" */ = {
+		CFG002 /* Build configuration list for PBXNativeTarget "loancalculatorsimplified" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BLD003 /* Debug */,
@@ -360,7 +360,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFG003 /* Build configuration list for PBXProject "LoanCalculator" */ = {
+		CFG003 /* Build configuration list for PBXProject "loancalculatorsimplified" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BLD001 /* Debug */,
