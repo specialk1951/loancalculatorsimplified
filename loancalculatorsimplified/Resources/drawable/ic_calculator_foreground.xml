@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Calculator body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,22 L78,22 C80.2,22 82,23.8 82,26 L82,82 C82,84.2 80.2,86 78,86 L30,86 C27.8,86 26,84.2 26,82 L26,26 C26,23.8 27.8,22 30,22 Z" />
+
+    <!-- Screen display -->
+    <path
+        android:fillColor="#1E3A5F"
+        android:pathData="M32,28 L76,28 C76.6,28 77,28.4 77,29 L77,42 C77,42.6 76.6,43 76,43 L32,43 C31.4,43 31,42.6 31,42 L31,29 C31,28.4 31.4,28 32,28 Z" />
+
+    <!-- Display text "$" -->
+    <path
+        android:fillColor="#4FC3F7"
+        android:pathData="M52,32 L52,33.5 M52,39.5 L52,41
+            M48.5,34.5 C48.5,33.4 50,32.5 52,32.5 C54,32.5 55.5,33.4 55.5,34.5 C55.5,35.6 54,36.5 52,36.5 C50,36.5 48.5,37.4 48.5,38.5 C48.5,39.6 50,40.5 52,40.5 C54,40.5 55.5,39.6 55.5,38.5"
+        android:strokeColor="#4FC3F7"
+        android:strokeWidth="1.5" />
+
+    <!-- Row 1 buttons -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M32,48 L42,48 C42.6,48 43,48.4 43,49 L43,56 C43,56.6 42.6,57 42,57 L32,57 C31.4,57 31,56.6 31,56 L31,49 C31,48.4 31.4,48 32,48 Z" />
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M48,48 L58,48 C58.6,48 59,48.4 59,49 L59,56 C59,56.6 58.6,57 58,57 L48,57 C47.4,57 47,56.6 47,56 L47,49 C47,48.4 47.4,48 48,48 Z" />
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M64,48 L76,48 C76.6,48 77,48.4 77,49 L77,56 C77,56.6 76.6,57 76,57 L64,57 C63.4,57 63,56.6 63,56 L63,49 C63,48.4 63.4,48 64,48 Z" />
+
+    <!-- Row 2 buttons -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M32,61 L42,61 C42.6,61 43,61.4 43,62 L43,69 C43,69.6 42.6,70 42,70 L32,70 C31.4,70 31,69.6 31,69 L31,62 C31,61.4 31.4,61 32,61 Z" />
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M48,61 L58,61 C58.6,61 59,61.4 59,62 L59,69 C59,69.6 58.6,70 58,70 L48,70 C47.4,70 47,69.6 47,69 L47,62 C47,61.4 47.4,61 48,61 Z" />
+    <path
+        android:fillColor="#FF7043"
+        android:pathData="M64,61 L76,61 C76.6,61 77,61.4 77,62 L77,69 C77,69.6 76.6,70 76,70 L64,70 C63.4,70 63,69.6 63,69 L63,62 C63,61.4 63.4,61 64,61 Z" />
+
+    <!-- Row 3 buttons -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M32,74 L42,74 C42.6,74 43,74.4 43,75 L43,82 C43,82.6 42.6,83 42,83 L32,83 C31.4,83 31,82.6 31,82 L31,75 C31,74.4 31.4,74 32,74 Z" />
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M48,74 L58,74 C58.6,74 59,74.4 59,75 L59,82 C59,82.6 58.6,83 58,83 L48,83 C47.4,83 47,82.6 47,82 L47,75 C47,74.4 47.4,74 48,74 Z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M64,74 L76,74 C76.6,74 77,74.4 77,75 L77,82 C77,82.6 76.6,83 76,83 L64,83 C63.4,83 63,82.6 63,82 L63,75 C63,74.4 63.4,74 64,74 Z" />
+
+    <!-- Button labels -->
+    <!-- Row 1: 7, 8, 9 -->
+    <path android:fillColor="#555555"
+        android:pathData="M35,54.5 L35,50.5 L37.5,54.5 L39,54.5 L39,50 L37.8,50 L37.8,53.8 L35.5,50 L34,50 L34,54.5 Z" />
+
+    <!-- Row 1 middle: 8 -->
+    <path android:fillColor="#555555"
+        android:pathData="M51.5,50 C50,50 49,51 49,52.2 C49,53.5 50,54.6 51.5,54.6 C53,54.6 54,53.5 54,52.2 C54,51 53,50 51.5,50 Z M51.5,51 C52.3,51 52.8,51.5 52.8,52.2 C52.8,53 52.3,53.6 51.5,53.6 C50.7,53.6 50.2,53 50.2,52.2 C50.2,51.5 50.7,51 51.5,51 Z" />
+
+    <!-- "=" on green button -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M67,77.5 L73,77.5 M67,80 L73,80" />
+
+    <!-- "+" on orange button -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M70,63.5 L70,68.5 M67.5,66 L72.5,66" />
+</vector>
