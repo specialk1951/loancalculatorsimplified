@@ -57,9 +57,10 @@ loancalculatorsimplified/
 
 ## Screenshots
 
-| Android | PIN Login |
-|---------|-----------|
-| ![Emulator](emulator_screenshot.png) | ![PIN](screenshot_pin.png) |
+<p>
+  <img src="screenshot_pin_setup.png" alt="PIN Setup" width="250">
+  <img src="phone_screenshot.png" alt="Calculator with Results" width="250">
+</p>
 
 ## Bundle ID
 
