@@ -48,7 +48,6 @@ loancalculatorsimplified/
 │   └── loancalculatorsimplified/
 │       ├── Models/LoanCalculation.swift
 │       └── Views/CalculatorView.swift
-└── LoanCalc_Icon.png                        # App icon
 ```
 
 ## Bundle ID
