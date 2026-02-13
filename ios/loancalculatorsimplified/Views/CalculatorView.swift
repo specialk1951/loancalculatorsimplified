@@ -127,7 +127,7 @@ struct CalculatorView: View {
                 }
                 result = LoanCalculator.solveForInterestRate(loanAmount: loan, numPayments: payments, paymentAmount: payment)
                 if let r = result {
-                    interestRate = String(format: "%.2f", r.calculatedValue)
+                    interestRate = String(format: "%.3f", r.calculatedValue)
                 }
             } else if !hasNumPayments {
                 guard let loan = Double(loanAmount),
@@ -247,7 +247,7 @@ struct ResultsView: View {
 
     var formattedValue: String {
         if result.calculatedField == "Interest Rate (%)" {
-            return String(format: "%.2f%%", result.calculatedValue)
+            return String(format: "%.3f%%", result.calculatedValue)
         } else if result.calculatedField == "Number of Payments" {
             return String(format: "%.0f", result.calculatedValue)
         } else {

@@ -153,8 +153,8 @@ namespace Loan_Calculator
             double totalPaid = pmt * n;
             double totalInterest = totalPaid - pv;
 
-            editInterestRate!.Text = annualRate.ToString("F2");
-            ShowResult("Interest Rate (%):", annualRate.ToString("F2"), totalPaid, totalInterest);
+            editInterestRate!.Text = annualRate.ToString("F3");
+            ShowResult("Interest Rate (%):", annualRate.ToString("F3"), totalPaid, totalInterest);
         }
 
         private void SolveForNumPayments(string loanAmountText, string interestRateText, string paymentAmountText)
