@@ -1,6 +1,6 @@
 # Loan Calculator Simplified
 
-A cross-platform loan calculator with PIN authentication, built natively for Android and iOS.
+A cross-platform loan calculator built natively for Android and iOS.
 
 Enter any 3 of the 4 loan variables and the app solves for the missing one:
 
@@ -28,7 +28,7 @@ dotnet build loancalculatorsimplified.sln
 
 ### iOS
 
-Built with SwiftUI (iOS 16+). Uses a clean Models/Views/Services architecture with Keychain-backed PIN storage.
+Built with SwiftUI (iOS 16+). Uses a clean Models/Views architecture.
 
 See [`ios/README.md`](ios/README.md) for full details.
 
@@ -49,16 +49,13 @@ loancalculatorsimplified/
 │   ├── loancalculatorsimplified.xcodeproj/
 │   └── loancalculatorsimplified/
 │       ├── Models/LoanCalculation.swift
-│       ├── Views/LoginView.swift
-│       ├── Views/CalculatorView.swift
-│       └── Services/AuthenticationService.swift
+│       └── Views/CalculatorView.swift
 └── LoanCalc_Icon.png                        # App icon
 ```
 
 ## Screenshots
 
 <p>
-  <img src="screenshot_pin_setup.png" alt="PIN Setup" width="250">
   <img src="phone_screenshot.png" alt="Calculator with Results" width="250">
 </p>
 

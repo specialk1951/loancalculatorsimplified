@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct CalculatorView: View {
-    @EnvironmentObject var authService: AuthenticationService
-
     @State private var loanAmount = ""
     @State private var interestRate = ""
     @State private var numPayments = ""
@@ -260,5 +258,4 @@ struct ResultsView: View {
 
 #Preview {
     CalculatorView()
-        .environmentObject(AuthenticationService())
 }
