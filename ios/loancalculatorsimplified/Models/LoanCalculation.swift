@@ -9,9 +9,9 @@ struct LoanResult {
 
 class LoanCalculator {
 
-    static func solveForLoanAmount(interestRate: Double, numPayments: Int, paymentAmount: Double) -> LoanResult? {
+    static func solveForLoanAmount(interestRate: Double, numPayments: Double, paymentAmount: Double) -> LoanResult? {
         let r = interestRate / 100.0 / 12.0
-        let n = Double(numPayments)
+        let n = numPayments
         let pmt = paymentAmount
 
         guard r > 0, n > 0, pmt > 0 else { return nil }
@@ -28,9 +28,9 @@ class LoanCalculator {
         )
     }
 
-    static func solveForInterestRate(loanAmount: Double, numPayments: Int, paymentAmount: Double) -> LoanResult? {
+    static func solveForInterestRate(loanAmount: Double, numPayments: Double, paymentAmount: Double) -> LoanResult? {
         let pv = loanAmount
-        let n = Double(numPayments)
+        let n = numPayments
         let pmt = paymentAmount
 
         guard pv > 0, n > 0, pmt > 0 else { return nil }
@@ -91,10 +91,10 @@ class LoanCalculator {
         )
     }
 
-    static func solveForPaymentAmount(loanAmount: Double, interestRate: Double, numPayments: Int) -> LoanResult? {
+    static func solveForPaymentAmount(loanAmount: Double, interestRate: Double, numPayments: Double) -> LoanResult? {
         let pv = loanAmount
         let r = interestRate / 100.0 / 12.0
-        let n = Double(numPayments)
+        let n = numPayments
 
         guard pv > 0, r > 0, n > 0 else { return nil }
 

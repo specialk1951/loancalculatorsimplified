@@ -111,7 +111,7 @@ struct CalculatorView: View {
         do {
             if !hasLoanAmount {
                 guard let rate = Double(interestRate),
-                      let payments = Int(numPayments),
+                      let payments = Double(numPayments),
                       let payment = Double(paymentAmount) else {
                     throw CalculationError.invalidInput
                 }
@@ -121,7 +121,7 @@ struct CalculatorView: View {
                 }
             } else if !hasInterestRate {
                 guard let loan = Double(loanAmount),
-                      let payments = Int(numPayments),
+                      let payments = Double(numPayments),
                       let payment = Double(paymentAmount) else {
                     throw CalculationError.invalidInput
                 }
@@ -137,12 +137,12 @@ struct CalculatorView: View {
                 }
                 result = LoanCalculator.solveForNumPayments(loanAmount: loan, interestRate: rate, paymentAmount: payment)
                 if let r = result {
-                    numPayments = String(format: "%.0f", r.calculatedValue)
+                    numPayments = String(format: "%.3f", r.calculatedValue)
                 }
             } else {
                 guard let loan = Double(loanAmount),
                       let rate = Double(interestRate),
-                      let payments = Int(numPayments) else {
+                      let payments = Double(numPayments) else {
                     throw CalculationError.invalidInput
                 }
                 result = LoanCalculator.solveForPaymentAmount(loanAmount: loan, interestRate: rate, numPayments: payments)

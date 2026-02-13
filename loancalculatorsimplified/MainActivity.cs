@@ -92,7 +92,7 @@ namespace Loan_Calculator
         private void SolveForLoanAmount(string interestRateText, string numPaymentsText, string paymentAmountText)
         {
             double r = double.Parse(interestRateText) / 100.0 / 12.0;
-            int n = (int)double.Parse(numPaymentsText);
+            double n = double.Parse(numPaymentsText);
             double pmt = double.Parse(paymentAmountText);
 
             if (r == 0 || n == 0 || pmt == 0)
@@ -112,7 +112,7 @@ namespace Loan_Calculator
         private void SolveForInterestRate(string loanAmountText, string numPaymentsText, string paymentAmountText)
         {
             double pv = double.Parse(loanAmountText);
-            int n = (int)double.Parse(numPaymentsText);
+            double n = double.Parse(numPaymentsText);
             double pmt = double.Parse(paymentAmountText);
 
             if (pv == 0 || n == 0 || pmt == 0)
@@ -188,7 +188,7 @@ namespace Loan_Calculator
         {
             double pv = double.Parse(loanAmountText);
             double r = double.Parse(interestRateText) / 100.0 / 12.0;
-            int n = (int)double.Parse(numPaymentsText);
+            double n = double.Parse(numPaymentsText);
 
             if (pv == 0 || r == 0 || n == 0)
             {
