@@ -51,12 +51,6 @@ loancalculatorsimplified/
 └── LoanCalc_Icon.png                        # App icon
 ```
 
-## Screenshots
-
-<p>
-  <img src="phone_screenshot.png" alt="Calculator with Results" width="250">
-</p>
-
 ## Bundle ID
 
 `com.loancalcsimplified.app` (shared across both platforms)
