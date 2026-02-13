@@ -16,8 +16,6 @@
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>..\loancalc.keystore</AndroidSigningKeyStore>
     <AndroidSigningKeyAlias>loancalc</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>**REMOVED**</AndroidSigningKeyPass>
-    <AndroidSigningStorePass>**REMOVED**</AndroidSigningStorePass>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
   </PropertyGroup>
 </Project>
