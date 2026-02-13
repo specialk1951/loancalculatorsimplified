@@ -14,15 +14,4 @@
     <string name="results_title">Results</string>
     <string name="total_paid">Total Amount Paid:</string>
     <string name="total_interest">Total Interest Paid:</string>
-
-    <!-- PIN Authentication -->
-    <string name="pin_setup_title">Create PIN</string>
-    <string name="pin_setup_subtitle">Enter a 4-digit PIN to secure your app</string>
-    <string name="pin_confirm">Confirm your PIN</string>
-    <string name="pin_enter_title">Enter PIN</string>
-    <string name="pin_enter_subtitle">Enter your 4-digit PIN to continue</string>
-    <string name="pin_mismatch">PINs do not match. Try again.</string>
-    <string name="pin_incorrect">Incorrect PIN. Try again.</string>
-    <string name="pin_clear">C</string>
-    <string name="pin_backspace">\u232B</string>
 </resources>

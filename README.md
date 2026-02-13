@@ -17,7 +17,6 @@ Results include the calculated value, total amount paid, and total interest paid
 
 Built with C# and .NET 8 (`net8.0-android`). Uses native Android views and Activities.
 
-- `LoginActivity` &mdash; 4-digit PIN setup/entry with SHA-256 hashing (SharedPreferences)
 - `MainActivity` &mdash; Loan calculator with solve-for-any-field logic
 
 **Requirements:** Visual Studio 2022+ with the .NET MAUI / Android workload, or `dotnet build` with the Android SDK.
@@ -42,7 +41,6 @@ loancalculatorsimplified/
 ├── loancalculatorsimplified/                 # Android project
 │   ├── loancalculatorsimplified.csproj
 │   ├── AndroidManifest.xml
-│   ├── LoginActivity.cs
 │   ├── MainActivity.cs
 │   └── Resources/
 ├── ios/                                      # iOS project

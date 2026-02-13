@@ -2,7 +2,7 @@ using Android.Views;
 
 namespace Loan_Calculator
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : Activity
     {
         private EditText? editLoanAmount;
