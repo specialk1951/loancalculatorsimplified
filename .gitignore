@@ -13,3 +13,7 @@ obj/
 
 # Keystore (contains sensitive signing keys)
 *.keystore
+
+# Installer build output
+Installer/*.msi
+Installer/*.wixpdb

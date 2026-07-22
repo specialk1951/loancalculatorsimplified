@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+
+  <Package Name="Loan Calculator Simplified"
+            Manufacturer="Specialk9"
+            Version="1.4.0.5"
+            UpgradeCode="39446630-A9EE-4829-92F9-63A734977BBE"
+            Compressed="yes">
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <Icon Id="AppIcon.ico" SourceFile="$(var.PublishDir)\calculator_padded.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
+
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="INSTALLFOLDER" Name="Loan Calculator Simplified">
+        <Component Id="MainExecutable" Guid="7C6C1B2F-6E3E-4B7A-9C1C-2D6E6C0B6A11">
+          <File Id="LoanCalculatorSimplifiedEXE" Source="$(var.PublishDir)\LoanCalculatorSimplified.exe" KeyPath="yes">
+            <Shortcut Id="StartMenuShortcut"
+                      Directory="ProgramMenuFolder"
+                      Name="Loan Calculator Simplified"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Icon="AppIcon.ico"
+                      Advertise="yes" />
+            <Shortcut Id="DesktopShortcut"
+                      Directory="DesktopFolder"
+                      Name="Loan Calculator Simplified"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Icon="AppIcon.ico"
+                      Advertise="yes" />
+          </File>
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Files Include="$(var.PublishDir)\**">
+        <Exclude Files="$(var.PublishDir)\LoanCalculatorSimplified.exe" />
+      </Files>
+    </ComponentGroup>
+
+    <Feature Id="MainFeature" Title="Loan Calculator Simplified" Level="1">
+      <ComponentRef Id="MainExecutable" />
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+
+  </Package>
+</Wix>

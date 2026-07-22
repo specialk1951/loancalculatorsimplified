@@ -19,7 +19,8 @@
                 <Button x:Name="btnLoanAmount"
                         Text="Loan&#10;Amount"
                         FontSize="14"
-                        HeightRequest="48"
+                        HeightRequest="60"
+                        BorderWidth="0"
                         Clicked="btnLoanAmount_Click" />
                 <Entry x:Name="txbLoanAmount"
                        Placeholder="Loan Amount"
@@ -27,6 +28,7 @@
                        Keyboard="Numeric"
                        HeightRequest="50"
                        BackgroundColor="White"
+                       TextChanged="Entry_TextChanged"
                        Grid.Column="2" />
             </Grid>
 
@@ -35,7 +37,8 @@
                 <Button x:Name="btnInterestRate"
                         Text="Interest&#10;Rate"
                         FontSize="14"
-                        HeightRequest="48"
+                        HeightRequest="60"
+                        BorderWidth="0"
                         Clicked="btnInterestRate_Click" />
                 <Entry x:Name="txbInterestRate"
                        Placeholder="Interest Rate"
@@ -43,6 +46,7 @@
                        Keyboard="Numeric"
                        HeightRequest="50"
                        BackgroundColor="White"
+                       TextChanged="Entry_TextChanged"
                        Grid.Column="2" />
             </Grid>
 
@@ -51,7 +55,8 @@
                 <Button x:Name="btnNumberOfPayments"
                         Text="Number Of&#10;Payments"
                         FontSize="14"
-                        HeightRequest="48"
+                        HeightRequest="60"
+                        BorderWidth="0"
                         Clicked="btnNumberOfPayments_Click" />
                 <Entry x:Name="txbNumberOfPayments"
                        Placeholder="No. of Payments"
@@ -59,6 +64,7 @@
                        Keyboard="Numeric"
                        HeightRequest="50"
                        BackgroundColor="White"
+                       TextChanged="Entry_TextChanged"
                        Grid.Column="2" />
             </Grid>
 
@@ -67,7 +73,8 @@
                 <Button x:Name="btnPaymentAmount"
                         Text="Payment&#10;Amount"
                         FontSize="14"
-                        HeightRequest="48"
+                        HeightRequest="60"
+                        BorderWidth="0"
                         Clicked="btnPaymentAmount_Click" />
                 <Entry x:Name="txbPaymentAmount"
                        Placeholder="Payment Amount"
@@ -75,6 +82,7 @@
                        Keyboard="Numeric"
                        HeightRequest="50"
                        BackgroundColor="White"
+                       TextChanged="Entry_TextChanged"
                        Grid.Column="2" />
             </Grid>
 

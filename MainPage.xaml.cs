@@ -7,6 +7,37 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    private void Entry_TextChanged(object? sender, TextChangedEventArgs e)
+    {
+        UpdateNextButtonHighlight();
+    }
+
+    private void UpdateNextButtonHighlight()
+    {
+        bool hasLoanAmount = !string.IsNullOrWhiteSpace(txbLoanAmount.Text);
+        bool hasInterestRate = !string.IsNullOrWhiteSpace(txbInterestRate.Text);
+        bool hasNumberOfPayments = !string.IsNullOrWhiteSpace(txbNumberOfPayments.Text);
+        bool hasPaymentAmount = !string.IsNullOrWhiteSpace(txbPaymentAmount.Text);
+
+        int filledCount = new[] { hasLoanAmount, hasInterestRate, hasNumberOfPayments, hasPaymentAmount }.Count(f => f);
+
+        Button? nextButton = null;
+        if (filledCount == 3)
+        {
+            if (!hasLoanAmount) nextButton = btnLoanAmount;
+            else if (!hasInterestRate) nextButton = btnInterestRate;
+            else if (!hasNumberOfPayments) nextButton = btnNumberOfPayments;
+            else if (!hasPaymentAmount) nextButton = btnPaymentAmount;
+        }
+
+        foreach (var btn in new[] { btnLoanAmount, btnInterestRate, btnNumberOfPayments, btnPaymentAmount })
+        {
+            bool isNext = btn == nextButton;
+            btn.BorderColor = isNext ? Colors.Blue : Colors.Transparent;
+            btn.BorderWidth = isNext ? 3 : 0;
+        }
+    }
+
     private async void btnLoanAmount_Click(object? sender, EventArgs e)
     {
         string chrInterestRate = txbInterestRate.Text;
@@ -36,7 +67,7 @@ public partial class MainPage : ContentPage
         double numberOfPayments = Convert.ToDouble(chrNumberOfPayments);
         double paymentAmount = Convert.ToDouble(chrPaymentAmount);
 
-        if (interestRate < 0.1)
+        if (interestRate < 0)
         {
             await OneTo100();
             txbTotalInterest.Text = "";
@@ -65,9 +96,11 @@ public partial class MainPage : ContentPage
         try
         {
             double monthlyInterestRate = interestRate / 100 / 12;
-            double loanAmount = paymentAmount / (monthlyInterestRate / (1 - Math.Pow((1 + monthlyInterestRate), -numberOfPayments)));
+            double loanAmount = monthlyInterestRate == 0
+                ? paymentAmount * numberOfPayments
+                : paymentAmount / (monthlyInterestRate / (1 - Math.Pow((1 + monthlyInterestRate), -numberOfPayments)));
 
-            txbLoanAmount.Text = string.Format("{0:$ ###,###,###.00}", loanAmount);
+            txbLoanAmount.Text = string.Format("{0:$ ###,##0.00}", loanAmount);
 
             CalculateTotalInterest();
         }
@@ -129,6 +162,14 @@ public partial class MainPage : ContentPage
 
         try
         {
+            double AoverPCheck = paymentAmount / loanAmount;
+            if (Math.Abs(AoverPCheck - (1.0 / numberOfPayments)) < 0.0000001)
+            {
+                txbInterestRate.Text = string.Format("{0:##0.000%}", 0.0);
+                CalculateTotalInterest();
+                return;
+            }
+
             while (i <= 100)
             {
                 double monthlyInterestRate = i / 100 / 12;
@@ -150,7 +191,7 @@ public partial class MainPage : ContentPage
                     if (i < 0.001 || i > 1)
                     {
                         txbInterestRate.Text = "";
-                        await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0.1 to 100 percent", "OK");
+                        await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0 to 100 percent", "OK");
                         txbInterestRate.Text = "";
                         txbTotalInterest.Text = "";
                     }
@@ -158,7 +199,7 @@ public partial class MainPage : ContentPage
                 }
                 if (i > 100)
                 {
-                    await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0.1 to 100 percent", "OK");
+                    await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0 to 100 percent", "OK");
                     txbInterestRate.Text = "";
                     txbTotalInterest.Text = "";
                 }
@@ -210,7 +251,7 @@ public partial class MainPage : ContentPage
             txbLoanAmount.Text = "";
             return;
         }
-        if (interestRate < 0.1)
+        if (interestRate < 0)
         {
             await OneTo100();
             txbTotalInterest.Text = "";
@@ -233,9 +274,17 @@ public partial class MainPage : ContentPage
         try
         {
             double monthlyInterestRate = interestRate / 100 / 12;
-            double numerator = Math.Log10(1 - (loanAmount * monthlyInterestRate / paymentAmount));
-            double denominator = Math.Log10(1 + monthlyInterestRate);
-            double numberOfPayments = -numerator / denominator;
+            double numberOfPayments;
+            if (monthlyInterestRate == 0)
+            {
+                numberOfPayments = loanAmount / paymentAmount;
+            }
+            else
+            {
+                double numerator = Math.Log10(1 - (loanAmount * monthlyInterestRate / paymentAmount));
+                double denominator = Math.Log10(1 + monthlyInterestRate);
+                numberOfPayments = -numerator / denominator;
+            }
 
             txbNumberOfPayments.Text = string.Format("{0:###.000}", numberOfPayments);
 
@@ -282,7 +331,7 @@ public partial class MainPage : ContentPage
             txbLoanAmount.Text = "";
             return;
         }
-        if (interestRate < 0.1)
+        if (interestRate < 0)
         {
             await OneTo100();
             txbTotalInterest.Text = "";
@@ -305,10 +354,11 @@ public partial class MainPage : ContentPage
         try
         {
             double monthlyInterestRate = interestRate / 100 / 12;
-            double paymentAmount = loanAmount * monthlyInterestRate /
-                                   (1 - Math.Pow((1 + monthlyInterestRate), -numberOfPayments));
+            double paymentAmount = monthlyInterestRate == 0
+                ? loanAmount / numberOfPayments
+                : loanAmount * monthlyInterestRate / (1 - Math.Pow((1 + monthlyInterestRate), -numberOfPayments));
 
-            txbPaymentAmount.Text = string.Format("{0:$ ###,###,###.00}", paymentAmount);
+            txbPaymentAmount.Text = string.Format("{0:$ ###,##0.00}", paymentAmount);
 
             CalculateTotalInterest();
         }
@@ -329,6 +379,15 @@ public partial class MainPage : ContentPage
 
     private void CalculateTotalInterest()
     {
+        string chrInterestRate = txbInterestRate.Text.TrimEnd('%');
+        double interestRate = Convert.ToDouble(chrInterestRate);
+
+        if (interestRate == 0)
+        {
+            txbTotalInterest.Text = string.Format("{0:$ ###,##0.00}", 0.0);
+            return;
+        }
+
         string chrLoanAmount = txbLoanAmount.Text.TrimStart('$');
         string chrPaymentAmount = txbPaymentAmount.Text.TrimStart('$');
 
@@ -338,7 +397,7 @@ public partial class MainPage : ContentPage
 
         double totalInterest = (paymentAmount * numberOfPayments) - loanAmount;
 
-        txbTotalInterest.Text = string.Format("{0:$ ###,###,###.00}", totalInterest);
+        txbTotalInterest.Text = string.Format("{0:$ ###,##0.00}", totalInterest);
     }
 
     private async Task MissingEntries()
@@ -353,6 +412,6 @@ public partial class MainPage : ContentPage
 
     private async Task OneTo100()
     {
-        await DisplayAlert("Interest Rate", "Allowable entry for Interest Rate is 0.1 to 100", "OK");
+        await DisplayAlert("Interest Rate", "Allowable entry for Interest Rate is 0 to 100", "OK");
     }
 }
