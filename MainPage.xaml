@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoanCalculatorSimplified.MainPage"
+             Title="Loan Calculator">
+
+    <ScrollView BackgroundColor="#C8E6F5">
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#C8E6F5"
+                             MaximumWidthRequest="500" HorizontalOptions="Center">
+
+            <Label Text="Loan Calculator Simplified"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10" />
+
+            <!-- Loan Amount -->
+            <Grid ColumnDefinitions="2*, 0.4*, 2.6*" ColumnSpacing="10">
+                <Button x:Name="btnLoanAmount"
+                        Text="Loan&#10;Amount"
+                        FontSize="14"
+                        HeightRequest="48"
+                        Clicked="btnLoanAmount_Click" />
+                <Entry x:Name="txbLoanAmount"
+                       Placeholder="Loan Amount"
+                       FontSize="18"
+                       Keyboard="Numeric"
+                       HeightRequest="50"
+                       BackgroundColor="White"
+                       Grid.Column="2" />
+            </Grid>
+
+            <!-- Interest Rate -->
+            <Grid ColumnDefinitions="2*, 0.4*, 2.6*" ColumnSpacing="10">
+                <Button x:Name="btnInterestRate"
+                        Text="Interest&#10;Rate"
+                        FontSize="14"
+                        HeightRequest="48"
+                        Clicked="btnInterestRate_Click" />
+                <Entry x:Name="txbInterestRate"
+                       Placeholder="Interest Rate"
+                       FontSize="18"
+                       Keyboard="Numeric"
+                       HeightRequest="50"
+                       BackgroundColor="White"
+                       Grid.Column="2" />
+            </Grid>
+
+            <!-- Number of Payments -->
+            <Grid ColumnDefinitions="2*, 0.4*, 2.6*" ColumnSpacing="10">
+                <Button x:Name="btnNumberOfPayments"
+                        Text="Number Of&#10;Payments"
+                        FontSize="14"
+                        HeightRequest="48"
+                        Clicked="btnNumberOfPayments_Click" />
+                <Entry x:Name="txbNumberOfPayments"
+                       Placeholder="No. of Payments"
+                       FontSize="18"
+                       Keyboard="Numeric"
+                       HeightRequest="50"
+                       BackgroundColor="White"
+                       Grid.Column="2" />
+            </Grid>
+
+            <!-- Payment Amount -->
+            <Grid ColumnDefinitions="2*, 0.4*, 2.6*" ColumnSpacing="10">
+                <Button x:Name="btnPaymentAmount"
+                        Text="Payment&#10;Amount"
+                        FontSize="14"
+                        HeightRequest="48"
+                        Clicked="btnPaymentAmount_Click" />
+                <Entry x:Name="txbPaymentAmount"
+                       Placeholder="Payment Amount"
+                       FontSize="18"
+                       Keyboard="Numeric"
+                       HeightRequest="50"
+                       BackgroundColor="White"
+                       Grid.Column="2" />
+            </Grid>
+
+            <!-- Total Interest -->
+            <Grid ColumnDefinitions="2*, 0.4*, 2.6*" ColumnSpacing="10">
+                <Label Text="Total Interest:"
+                       FontSize="18"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2" />
+                <Entry x:Name="txbTotalInterest"
+                       Placeholder="Total Interest"
+                       FontSize="18"
+                       IsReadOnly="True"
+                       HeightRequest="50"
+                       BackgroundColor="White"
+                       Grid.Column="2" />
+            </Grid>
+
+            <!-- Clear Button -->
+            <Button x:Name="btnClear"
+                    Text="Clear"
+                    FontSize="14"
+                    HeightRequest="48"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Margin="0,10,0,0"
+                    Clicked="btnClear_Click" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

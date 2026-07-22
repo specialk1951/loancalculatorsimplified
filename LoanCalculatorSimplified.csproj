@@ -42,8 +42,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<!-- Exclude native Android subfolder from MAUI build -->
+		<Compile Remove="loancalculatorsimplified\**" />
+		<None Remove="loancalculatorsimplified\**" />
+		<Content Remove="loancalculatorsimplified\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\calculator_padded.png" ForegroundScale="1.0" />
+		<MauiIcon Include="Resources\AppIcon\calculator_padded.png" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
