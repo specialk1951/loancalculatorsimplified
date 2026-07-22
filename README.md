@@ -2,7 +2,7 @@
 
 <img src="AppIcon-1024.png" alt="App Icon" width="100">
 
-A cross-platform loan calculator built natively for Android and iOS.
+A cross-platform loan calculator built with .NET MAUI targeting Android, iOS, macOS, and Windows. Now with Android 16 (API 36) support.
 
 Enter any 3 of the 4 loan variables and the app solves for the missing one:
 
@@ -17,14 +17,12 @@ Results include the calculated value, total amount paid, and total interest paid
 
 ### Android
 
-Built with C# and .NET 8 (`net8.0-android`). Uses native Android views and Activities.
+Built with .NET MAUI (`net9.0-android36.0`). Targets Android 16 (API 36), minimum Android 5.0 (API 21).
 
-- `MainActivity` &mdash; Loan calculator with solve-for-any-field logic
+**Requirements:** Visual Studio 2022+ with the .NET MAUI / Android workload and Android SDK Platform 36 installed.
 
-**Requirements:** Visual Studio 2022+ with the .NET MAUI / Android workload, or `dotnet build` with the Android SDK.
-
-```
-dotnet build loancalculatorsimplified.sln
+```bash
+dotnet build -t:Run -f net9.0-android36.0
 ```
 
 ### iOS
@@ -35,17 +33,23 @@ See [`ios/README.md`](ios/README.md) for full details.
 
 **Requirements:** macOS with Xcode 15+.
 
+## Requirements
+
+- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- .NET MAUI workload (`dotnet workload install maui`)
+- Android SDK with API 36 (Android 16) platform installed (for Android deployment)
+
 ## Project Structure
 
 ```
-loancalculatorsimplified/
-├── loancalculatorsimplified.sln              # .NET solution (Android)
-├── loancalculatorsimplified/                 # Android project
-│   ├── loancalculatorsimplified.csproj
-│   ├── AndroidManifest.xml
-│   ├── MainActivity.cs
+LoanCalculatorSimplified/
+├── LoanCalculatorSimplified.sln
+├── LoanCalculatorSimplified/
+│   ├── LoanCalculatorSimplified.csproj
+│   ├── Platforms/Android/AndroidManifest.xml
+│   ├── MainPage.xaml
 │   └── Resources/
-├── ios/                                      # iOS project
+├── ios/
 │   ├── loancalculatorsimplified.xcodeproj/
 │   └── loancalculatorsimplified/
 │       ├── Models/LoanCalculation.swift
@@ -54,4 +58,4 @@ loancalculatorsimplified/
 
 ## Bundle ID
 
-`com.loancalcsimplified.app` (shared across both platforms)
+`com.specialk9.loancalculatorsimplifiedii`
