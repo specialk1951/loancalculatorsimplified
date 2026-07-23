@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+
+  <Bundle Name="Loan Calculator Simplified"
+          Manufacturer="Specialk9"
+          Version="1.4.0.9"
+          UpgradeCode="33118126-5BA6-4009-8699-83A7AB0C4B8A">
+
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication LicenseFile="License.rtf" Theme="rtfLicense" />
+    </BootstrapperApplication>
+
+    <Chain>
+      <MsiPackage SourceFile="LoanCalculatorSimplifiedSetup.msi" />
+    </Chain>
+
+  </Bundle>
+</Wix>

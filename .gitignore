@@ -16,4 +16,5 @@ obj/
 
 # Installer build output
 Installer/*.msi
+Installer/*.exe
 Installer/*.wixpdb

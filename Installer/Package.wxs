@@ -4,7 +4,7 @@
 
   <Package Name="Loan Calculator Simplified"
             Manufacturer="Specialk9"
-            Version="1.4.0.5"
+            Version="1.4.0.9"
             UpgradeCode="39446630-A9EE-4829-92F9-63A734977BBE"
             Compressed="yes">
 
@@ -12,7 +12,7 @@
 
     <MediaTemplate EmbedCab="yes" />
 
-    <Icon Id="AppIcon.ico" SourceFile="$(var.PublishDir)\calculator_padded.ico" />
+    <Icon Id="AppIcon.ico" SourceFile="AppIcon.ico" />
     <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
 
     <StandardDirectory Id="ProgramFiles6432Folder">
