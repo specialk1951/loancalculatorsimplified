@@ -377,6 +377,18 @@ public partial class MainPage : ContentPage
         txbTotalInterest.Text = "";
     }
 
+    private async void btnInfo_Click(object? sender, EventArgs e)
+    {
+        await DisplayAlert("How to Use",
+            "Enter any 3 of the 4 values below, then press the button for the one you want to calculate:\n\n" +
+            "• Loan Amount\n" +
+            "• Interest Rate (0 to 100)\n" +
+            "• Number of Payments\n" +
+            "• Payment Amount\n\n" +
+            "The 4th button is highlighted in blue once the other three are filled in.",
+            "OK");
+    }
+
     private void CalculateTotalInterest()
     {
         string chrInterestRate = txbInterestRate.Text.TrimEnd('%');
