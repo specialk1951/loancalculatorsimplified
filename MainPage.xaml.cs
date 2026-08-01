@@ -86,7 +86,7 @@ public partial class MainPage : ContentPage
             txbPaymentAmount.Text = "";
             return;
         }
-        if (interestRate > 100)
+        if (interestRate > 1000)
         {
             await OneTo100();
             txbInterestRate.Text = "";
@@ -170,7 +170,7 @@ public partial class MainPage : ContentPage
                 return;
             }
 
-            while (i <= 100)
+            while (i <= 1000)
             {
                 double monthlyInterestRate = i / 100 / 12;
                 double AoverP = paymentAmount / loanAmount;
@@ -188,23 +188,23 @@ public partial class MainPage : ContentPage
 
                     i = i / 100;  // Adjust i for % format
                     txbInterestRate.Text = string.Format("{0:##0.000%}", i);
-                    if (i < 0.001 || i > 1)
+                    if (i < 0.001 || i > 10)
                     {
                         txbInterestRate.Text = "";
-                        await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0 to 100 percent", "OK");
+                        await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0 to 1000 percent", "OK");
                         txbInterestRate.Text = "";
                         txbTotalInterest.Text = "";
                     }
                     break;
                 }
-                if (i > 100)
+                if (i > 1000)
                 {
-                    await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0 to 100 percent", "OK");
+                    await DisplayAlert("Interest Rate", "Allowable range for Interest Rate is 0 to 1000 percent", "OK");
                     txbInterestRate.Text = "";
                     txbTotalInterest.Text = "";
                 }
             }
-            if (i >= 0.001 && i <= 1.0)
+            if (i >= 0.001 && i <= 10.0)
             {
                 CalculateTotalInterest();
             }
@@ -264,7 +264,7 @@ public partial class MainPage : ContentPage
             txbPaymentAmount.Text = "";
             return;
         }
-        if (interestRate > 100)
+        if (interestRate > 1000)
         {
             await OneTo100();
             txbInterestRate.Text = "";
@@ -344,7 +344,7 @@ public partial class MainPage : ContentPage
             txbNumberOfPayments.Text = "";
             return;
         }
-        if (interestRate > 100)
+        if (interestRate > 1000)
         {
             await OneTo100();
             txbInterestRate.Text = "";
@@ -382,7 +382,7 @@ public partial class MainPage : ContentPage
         await DisplayAlert("How to Use",
             "Enter any 3 of the 4 values below, then press the button for the one you want to calculate:\n\n" +
             "• Loan Amount\n" +
-            "• Interest Rate (0 to 100)\n" +
+            "• Interest Rate (0 to 1000)\n" +
             "• Number of Payments\n" +
             "• Payment Amount\n\n" +
             "The 4th button is highlighted in blue once the other three are filled in.",
@@ -424,6 +424,6 @@ public partial class MainPage : ContentPage
 
     private async Task OneTo100()
     {
-        await DisplayAlert("Interest Rate", "Allowable entry for Interest Rate is 0 to 100", "OK");
+        await DisplayAlert("Interest Rate", "Allowable entry for Interest Rate is 0 to 1000", "OK");
     }
 }
