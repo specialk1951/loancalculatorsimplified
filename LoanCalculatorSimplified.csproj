@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>LoanCalculatorSimplified</ApplicationTitle>
+		<ApplicationTitle>Loan Calculator Simplified</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.specialk9.loancalculatorsimplifiedii</ApplicationId>
@@ -32,6 +32,9 @@
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
+
+		<!-- Google Play requires an Android App Bundle, not an APK (Release only, so `dotnet build -t:Run` for local debug still produces an installable APK) -->
+		<AndroidPackageFormat Condition="'$(Configuration)' == 'Release' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">aab</AndroidPackageFormat>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
